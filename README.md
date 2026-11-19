@@ -1,4 +1,4 @@
-# MobilePrice AI
+# Smartphone Price Classifier
 **Mobile Price Range Classification Using Machine Learning Algorithms**  
  · Python · Scikit-learn · FastAPI · HTML/Tailwind CSS/JavaScript
 
