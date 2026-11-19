@@ -1,0 +1,224 @@
+{
+  "dataset": "Kaggle Mobile Price Classification",
+  "test_size": 0.2,
+  "random_state": 42,
+  "averaging": "weighted",
+  "models": [
+    {
+      "model": "Random Forest",
+      "accuracy": 0.88,
+      "precision": 0.8804702799211492,
+      "recall": 0.88,
+      "f1_score": 0.8801800303033377,
+      "confusion_matrix": [
+        [
+          95,
+          5,
+          0,
+          0
+        ],
+        [
+          6,
+          82,
+          12,
+          0
+        ],
+        [
+          0,
+          15,
+          81,
+          4
+        ],
+        [
+          0,
+          0,
+          6,
+          94
+        ]
+      ],
+      "classification_report": {
+        "Low Cost": {
+          "precision": 0.9405940594059405,
+          "recall": 0.95,
+          "f1-score": 0.945273631840796,
+          "support": 100.0
+        },
+        "Medium Cost": {
+          "precision": 0.803921568627451,
+          "recall": 0.82,
+          "f1-score": 0.8118811881188119,
+          "support": 100.0
+        },
+        "High Cost": {
+          "precision": 0.8181818181818182,
+          "recall": 0.81,
+          "f1-score": 0.8140703517587939,
+          "support": 100.0
+        },
+        "Very High Cost": {
+          "precision": 0.9591836734693877,
+          "recall": 0.94,
+          "f1-score": 0.9494949494949495,
+          "support": 100.0
+        },
+        "accuracy": 0.88,
+        "macro avg": {
+          "precision": 0.8804702799211493,
+          "recall": 0.88,
+          "f1-score": 0.8801800303033379,
+          "support": 400.0
+        },
+        "weighted avg": {
+          "precision": 0.8804702799211492,
+          "recall": 0.88,
+          "f1-score": 0.8801800303033377,
+          "support": 400.0
+        }
+      }
+    },
+    {
+      "model": "Logistic Regression",
+      "accuracy": 0.965,
+      "precision": 0.9650445632798573,
+      "recall": 0.965,
+      "f1_score": 0.9649863177272501,
+      "confusion_matrix": [
+        [
+          98,
+          2,
+          0,
+          0
+        ],
+        [
+          1,
+          96,
+          3,
+          0
+        ],
+        [
+          0,
+          2,
+          94,
+          4
+        ],
+        [
+          0,
+          0,
+          2,
+          98
+        ]
+      ],
+      "classification_report": {
+        "Low Cost": {
+          "precision": 0.98989898989899,
+          "recall": 0.98,
+          "f1-score": 0.9849246231155779,
+          "support": 100.0
+        },
+        "Medium Cost": {
+          "precision": 0.96,
+          "recall": 0.96,
+          "f1-score": 0.96,
+          "support": 100.0
+        },
+        "High Cost": {
+          "precision": 0.9494949494949495,
+          "recall": 0.94,
+          "f1-score": 0.9447236180904522,
+          "support": 100.0
+        },
+        "Very High Cost": {
+          "precision": 0.9607843137254902,
+          "recall": 0.98,
+          "f1-score": 0.9702970297029703,
+          "support": 100.0
+        },
+        "accuracy": 0.965,
+        "macro avg": {
+          "precision": 0.9650445632798574,
+          "recall": 0.965,
+          "f1-score": 0.9649863177272501,
+          "support": 400.0
+        },
+        "weighted avg": {
+          "precision": 0.9650445632798573,
+          "recall": 0.965,
+          "f1-score": 0.9649863177272501,
+          "support": 400.0
+        }
+      }
+    },
+    {
+      "model": "Neural Network",
+      "accuracy": 0.9275,
+      "precision": 0.9275202520252026,
+      "recall": 0.9275,
+      "f1_score": 0.9274988124703117,
+      "confusion_matrix": [
+        [
+          95,
+          5,
+          0,
+          0
+        ],
+        [
+          5,
+          90,
+          5,
+          0
+        ],
+        [
+          0,
+          4,
+          91,
+          5
+        ],
+        [
+          0,
+          0,
+          5,
+          95
+        ]
+      ],
+      "classification_report": {
+        "Low Cost": {
+          "precision": 0.95,
+          "recall": 0.95,
+          "f1-score": 0.95,
+          "support": 100.0
+        },
+        "Medium Cost": {
+          "precision": 0.9090909090909091,
+          "recall": 0.9,
+          "f1-score": 0.9045226130653267,
+          "support": 100.0
+        },
+        "High Cost": {
+          "precision": 0.900990099009901,
+          "recall": 0.91,
+          "f1-score": 0.9054726368159204,
+          "support": 100.0
+        },
+        "Very High Cost": {
+          "precision": 0.95,
+          "recall": 0.95,
+          "f1-score": 0.95,
+          "support": 100.0
+        },
+        "accuracy": 0.9275,
+        "macro avg": {
+          "precision": 0.9275202520252024,
+          "recall": 0.9275,
+          "f1-score": 0.9274988124703119,
+          "support": 400.0
+        },
+        "weighted avg": {
+          "precision": 0.9275202520252026,
+          "recall": 0.9275,
+          "f1-score": 0.9274988124703117,
+          "support": 400.0
+        }
+      }
+    }
+  ]
+}

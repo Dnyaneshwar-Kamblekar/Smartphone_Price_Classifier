@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MobilePrice AI | Classification Studio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100">
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><div class="brand-mark">M</div><div><b>MobilePrice AI</b><small>CLASSIFICATION STUDIO</small></div></div>
+      <nav>
+        <button class="nav-link active" data-page="dashboard">▦ <span>Dashboard</span></button>
+        <button class="nav-link" data-page="predict">✧ <span>Price Prediction</span></button>
+        <button class="nav-link" data-page="comparison">▤ <span>Model Comparison</span></button>
+        <button class="nav-link" data-page="visuals">◫ <span>Visualizations</span></button>
+      </nav>
+      <div class="sidebar-note"><span class="pulse"></span><span id="side-status">Checking model status…</span></div>
+      <div class="sidebar-footer">Machine Learning · CA1 Project</div>
+    </aside>
+    <main class="main-content">
+      <header class="topbar"><div><p class="eyebrow">MACHINE LEARNING PROJECT</p><h1 id="page-title">Dashboard</h1></div><div class="top-tag">● <span id="api-status">Connecting</span></div></header>
+      <section id="page-dashboard" class="page active">
+        <div class="hero-panel"><div><p class="eyebrow">INTELLIGENT CLASSIFICATION</p><h2>Understand a phone.<br><span>Predict its price range.</span></h2><p>Classify mobile specifications into one of four dataset price categories using three machine learning algorithms.</p><button class="primary-btn" data-go="predict">Start a prediction <span>→</span></button></div><div class="hero-art"><div class="phone"><div class="phone-camera"></div><div class="phone-screen"><span>AI</span><b>PRICE<br>RANGE</b><i>● ● ●</i></div></div><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div></div></div>
+        <div class="stat-grid">
+          <article class="stat-card"><span>INPUT FEATURES</span><strong>20</strong><small>Mobile specifications</small></article>
+          <article class="stat-card"><span>OUTPUT CLASSES</span><strong>04</strong><small>Low to very high cost</small></article>
+          <article class="stat-card"><span>ML ALGORITHMS</span><strong>03</strong><small>Classification models</small></article>
+          <article class="stat-card"><span>TRAINING SPLIT</span><strong>80:20</strong><small>Stratified · random state 42</small></article>
+        </div>
+        <div class="section-heading"><div><p class="eyebrow">MODEL SUITE</p><h3>Three approaches. One task.</h3></div><span class="muted">Scikit-learn classifiers</span></div>
+        <div class="model-grid">
+          <article class="model-card"><div class="model-icon violet">RF</div><h4>Random Forest</h4><p>Ensemble of decision trees. Uses the original feature scale.</p><span class="model-chip">Ensemble learning</span></article>
+          <article class="model-card"><div class="model-icon blue">LR</div><h4>Logistic Regression</h4><p>Multiclass linear classifier with standardized input features.</p><span class="model-chip">StandardScaler + LR</span></article>
+          <article class="model-card"><div class="model-icon green">NN</div><h4>Neural Network</h4><p>Multi-layer perceptron with 64 and 32 hidden neurons.</p><span class="model-chip">ReLU · Adam</span></article>
+        </div>
+        <div class="section-heading"><div><p class="eyebrow">REAL EVALUATION</p><h3>Performance snapshot</h3></div><span class="muted">Loaded from reports/metrics.json</span></div>
+        <div id="dashboard-metrics" class="table-wrap"><div class="empty-state">Train the models to view measured performance.</div></div>
+        <p class="disclaimer">Class labels are dataset categories, not actual market prices or currency values.</p>
+      </section>
+      <section id="page-predict" class="page">
+        <div class="section-heading"><div><p class="eyebrow">MODEL INFERENCE</p><h3>Enter mobile specifications</h3><p class="muted">Provide all 20 values. Binary features use 0 = No and 1 = Yes.</p></div></div>
+        <form id="prediction-form">
+          <div class="form-toolbar"><label>Prediction model<select id="model-choice"><option>Random Forest</option><option>Logistic Regression</option><option>Neural Network</option><option>Compare All</option></select></label><span class="muted">Required · 20 features</span></div>
+          <div id="feature-form" class="feature-grid"></div>
+          <div class="form-actions"><button type="reset" class="secondary-btn">Reset values</button><button class="primary-btn" type="submit" id="predict-btn">Predict price range <span>→</span></button></div>
+        </form>
+        <div id="prediction-results" class="results-area"></div>
+      </section>
+      <section id="page-comparison" class="page">
+        <div class="section-heading"><div><p class="eyebrow">EVALUATION REPORT</p><h3>Model performance comparison</h3><p class="muted">Metrics are calculated on the shared stratified test set.</p></div></div>
+        <div id="comparison-table" class="table-wrap"><div class="empty-state">No evaluation report found. Train the models first.</div></div>
+        <div class="info-panel"><b>How to read these metrics</b><p>Precision, recall, and F1-score use weighted averaging across the four classes. Accuracy is the fraction of correctly classified test records.</p></div>
+      </section>
+      <section id="page-visuals" class="page">
+        <div class="section-heading"><div><p class="eyebrow">MODEL DIAGNOSTICS</p><h3>Visual performance reports</h3><p class="muted">Generated after successful model training.</p></div></div>
+        <div class="chart-card"><h4>Model accuracy comparison</h4><img id="accuracy-image" alt="Model accuracy comparison chart" src="/reports/model_comparison.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="empty-state" style="display:none">Train models to generate this chart.</div></div>
+        <div class="chart-card"><h4>Confusion matrices</h4><img id="confusion-image" alt="Confusion matrices for all three models" src="/reports/confusion_matrices.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="empty-state" style="display:none">Train models to generate this chart.</div></div>
+      </section>
+      <footer>MobilePrice AI <span>·</span> College CA1 Machine Learning Project</footer>
+    </main>
+  </div>
+  <script src="/static/js/script.js"></script>
+</body></html>
