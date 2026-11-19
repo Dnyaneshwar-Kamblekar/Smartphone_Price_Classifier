@@ -3,7 +3,7 @@
  · Python · Scikit-learn · FastAPI · HTML/Tailwind CSS/JavaScript
 
 ## 1. Introduction
-MobilePrice AI is a browser-based machine learning application that predicts the dataset price-range class of a mobile phone from 20 technical specifications. It implements exactly three classifiers: Random Forest, Logistic Regression, and a Neural Network using Scikit-learn's MLPClassifier.
+Smartphone Price Classifier is a browser-based machine learning application that predicts the dataset price-range class of a mobile phone from 20 technical specifications. It implements exactly three classifiers: Random Forest, Logistic Regression, and a Neural Network using Scikit-learn's MLPClassifier.
 
 The four target labels are dataset categories only: **0 Low Cost, 1 Medium Cost, 2 High Cost, 3 Very High Cost**. They are not actual market prices.
 
